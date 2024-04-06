@@ -44,7 +44,6 @@ if ($api == 'POST') {
 
 //actualizar los datos del autor en la DB
 if ($api == 'PUT') {
-	parse_str(file_get_contents('php://input'), $post_input);
     $json_data = file_get_contents('php://input');
     $data = json_decode($json_data, true);
     if ($data !== null) {

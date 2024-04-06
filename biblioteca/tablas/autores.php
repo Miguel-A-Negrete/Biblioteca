@@ -1,7 +1,7 @@
 <?php
 	include_once '../conexion/Conexion.php';
 
-	// Crea la clase autores
+	
 	class Database extends Config {
 	  // Obtiene todos o un solo autor
       public function fetch($AutorID = 0) {
