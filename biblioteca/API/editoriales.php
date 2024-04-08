@@ -76,6 +76,6 @@ if ($api == 'DELETE') {
 			echo $Editorial->message('No se pudo eliminar a la editorial!', true);
 		}
 	} else {
-		echo $Editorial->message('Editorial no encontrado!', true);
+		echo $Editorial->message('Editorial no encontrado!', true); 
 	}
 }
