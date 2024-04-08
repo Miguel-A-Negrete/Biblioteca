@@ -183,3 +183,11 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO autores (Nombre, Apellido, Bio, FechaNacimiento, Nacionalidad) 
+VALUES ('Gabriel', 'García Márquez', 'Escritor colombiano, conocido por su obra "Cien años de soledad".', '1927-03-06', 'Colombiano');
+INSERT INTO generos (NombreGenero, Descripcion, Popularidad, CantidadLibros, FechaCreacion) 
+VALUES ('Ficción', 'Género literario que se caracteriza por narrar acontecimientos y personajes imaginarios.', 90, 1500, '2020-01-01');
+INSERT INTO libros (Titulo, AutorID, EditorialID, GeneroID, FechaPublicacion, ISBN, Precio, CantidadStock, Paginas, Idioma) 
+VALUES ('Cien años de soledad', 1, 1, 1, '1967-05-30', '978-0307474728', 19.99, 100, 432, 'Español');
+
