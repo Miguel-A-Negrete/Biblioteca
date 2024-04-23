@@ -2,21 +2,23 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: X-Requested-With');
-header('Content-Type: application/json');
 
 include_once '../tablas/editoriales.php';
-$Editorial = new Database();
+include_once '../Views/view.php';
+
+$Editorial = new Editorial();
 $api = $_SERVER['REQUEST_METHOD'];
 $EditorialID = intval($_GET['EditorialID'] ?? '');
 
 //obtiene uno o todas las editoriales de la DB
 if ($api == 'GET') {
 	if ($EditorialID != 0) {
-		$data = $Editorial->fetch($EditorialID);
+		$data = $Editorial->get($EditorialID);
+        View::returnJSON($data);
 	} else {
-		$data = $Editorial->fetch();
+		$data = $Editorial->get();
+        View::returnJSON($data);
 	}
-	echo json_encode($data);
 }
 
 //Agrega a una editorial a la DB
