@@ -2,21 +2,23 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: X-Requested-With');
-header('Content-Type: application/json');
 
 include_once '../tablas/autores.php';
-$Autor = new Database();
+include_once '../Views/view.php';
+
+$Autor = new Autor();
 $api = $_SERVER['REQUEST_METHOD'];
 $AutorID = intval($_GET['AutorID'] ?? '');
 
 //obtiene uno o todos los autores de la DB
 if ($api == 'GET') {
 	if ($AutorID != 0) {
-		$data = $Autor->fetch($AutorID);
+		$data = $Autor->get($AutorID);
+        View::returnJSON($data);
 	} else {
-		$data = $Autor->fetch();
+		$data = $Autor->get();
+        View::returnJSON($data);
 	}
-	echo json_encode($data);
 }
 
 //Agrega un autor a la DB
